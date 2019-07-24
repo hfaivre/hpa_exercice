@@ -13,11 +13,6 @@ spec:
   template:
     metadata:
       name: redis
-      annotations:
-        ad.datadoghq.com/redis.check_names: '["redisdb"]'
-        ad.datadoghq.com/redis.init_configs: '[{}]'
-        ad.datadoghq.com/redis.instances: '[{"host": "%%host%%","port":"6379"}]'
-        ad.datadoghq.com/redis.logs: '[{"source":"redis","service":"redis"}]'
       labels:
         app: redis
     spec:
