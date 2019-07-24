@@ -4,15 +4,15 @@ metadata:
   name: redisext
 spec:
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 2
   scaleTargetRef:
     apiVersion: apps/v1
-    kind: ReplicaSet
+    kind: Deployment
     name: redis
   metrics:
   - type: External
     external:
-      metricName: redis.net.commands
+      metricName: system.cpu.system
       metricSelector:
         matchLabels:
             kube_container_name: redis
