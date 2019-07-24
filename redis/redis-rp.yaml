@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: redis
+  labels:
+    app: redis 
+spec:
+  # modify replicas according to your case
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      name: redis
+      annotations:
+        ad.datadoghq.com/redis.check_names: '["redisdb"]'
+        ad.datadoghq.com/redis.init_configs: '[{}]'
+        ad.datadoghq.com/redis.instances: '[{"host": "%%host%%","port":"6379"}]'
+        ad.datadoghq.com/redis.logs: '[{"source":"redis","service":"redis"}]'
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        ports:
+        - containerPort: 6379
