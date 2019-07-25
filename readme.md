@@ -19,7 +19,8 @@ Given the Datadog documentation and the files in the `/node-agent` folder, run a
 
 Please ensure that you create a Secret to store the `DD_API_KEY` environment value, with the key of `api-key`
 
-*Hint* : RBAC
+*Hint : RBAC*
+
 **Objective:** Ensure that you get the Datadog Agent reporting in your account.
 
 # 2. Setting up a Redis ReplicaSet
@@ -57,6 +58,8 @@ b. Using `hpa-manifest` as an example, create a Horizontal Pod Autoscaler for th
 
 c. Ensure that your Horizontal Pod Autoscaler is working, use `kubectl describe hpa redisext`. *HINT: Make sure that the DCA has list and watch rights to pod autoscalers, use SEDOCS for help*
 
+**Objective:** Get the Horizontal Pod Autoscaler running without errors
+
 # 5. Stress your Redis instance
 
 Checkout the `master` branch by executing `git checkout master`
@@ -65,3 +68,5 @@ a. Exec into your Redis pod
 b. Execute 100K requests from 30 clients on your Redis instance. *HINT: `redis-benchmark`*
 c. Check the value of `redis.net.clients` in your Datadog account.
 d. How many Redis pods do you have now?
+
+**Objective:** Scale up your redis pods
