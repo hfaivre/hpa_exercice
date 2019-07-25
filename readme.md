@@ -62,6 +62,6 @@ c. Ensure that your Horizontal Pod Autoscaler is working, use `kubectl describe 
 Checkout the `master` branch by executing `git checkout master`
 
 a. Exec into your Redis pod
-b. Execute 100K requests from 30 clients on your Redis instance. *HINT: `redis-benchmark`
+b. Execute 100K requests from 30 clients on your Redis instance. *HINT: `redis-benchmark`*
 c. Check the value of `redis.net.clients` in your Datadog account.
 d. How many Redis pods do you have now?
