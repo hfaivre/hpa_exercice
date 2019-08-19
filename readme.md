@@ -1,6 +1,6 @@
 # Datadog Cluster Agent : Horizontal Pod Autoscaling Exercice
 
-# Introduction to test merge conflict!
+# Introduction!
 
 
 The aim of this exercice is to setup HPA with the Datadog Cluster Agent. During this exercice you'll be guided through the following steps, and will have to troubleshoot various parts of the given manifests in order to get HPA running.
